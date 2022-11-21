@@ -23,7 +23,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cors(
     {
-        origin: ['http://localhost:3000', 'https://tarunsinhadobby2.onrender.com/'],
+        origin: ['http://localhost:3000', 'https://jolly-frog-gabardine.cyclic.app/'],
         credentials: true,            //access-control-allow-credentials:true
         optionSuccessStatus: 200,
     }
