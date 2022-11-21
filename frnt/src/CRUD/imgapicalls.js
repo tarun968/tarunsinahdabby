@@ -1,7 +1,7 @@
 export const AddTheImage = async (token, user_id, formData) => {
     console.log(token, user_id, formData)
     try {
-        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/add-image/${user_id}`, {
+        const response = await fetch(`/add-image/${user_id}`, {
             method: 'POST',
             headers: {
                 Accept: "application/json",

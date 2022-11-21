@@ -21,13 +21,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.use(express.json());
-app.use(cors(
-    {
-        origin: ['http://localhost:3000', 'https://jolly-frog-gabardine.cyclic.app'],
-        credentials: true,
-        optionSuccessStatus: 200,
-    }
-))
+app.use(cors())
+// app.use(cors(
+//     {
+//         origin: ['http://localhost:3000', 'https://jolly-frog-gabardine.cyclic.app'],
+//         credentials: true,
+//         optionSuccessStatus: 200,
+//     }
+// ))
 const fs = require('fs')
 const { resolveSrv } = require('dns')
 const conn = `mongodb+srv://${process.env.USNAME}:${encodeURIComponent(process.env.PASSWORD)}@cluster0.umnottc.mongodb.net/?retryWrites=true&w=majority`
@@ -108,5 +109,5 @@ app.get("*", function (req, res) {
 
 const port = process.env.PORT || 5000
 app.listen(port, () => {
-    console.log("On the port 5000")
+    console.log(`On the port 5000 ${port}`)
 })

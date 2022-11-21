@@ -2,7 +2,7 @@
 export const signup = (Email,Name,Password) => {
     console.log("user data ",Email)
     console.log("",process.env.REACT_APP_SERVER_URL)
-    return fetch(`${process.env.REACT_APP_SERVER_URL}/signup`, {
+    return fetch(`/signup`, {
         method: 'POST',
         headers: {
             Accept: "application/json",
@@ -16,7 +16,7 @@ export const signup = (Email,Name,Password) => {
 }
 
 export const signin = (Name, Password) => {
-    return fetch(`${process.env.REACT_APP_SERVER_URL}/login`, {
+    return fetch(`/login`, {
         method: 'POST',
         headers: {
             Accept: "application/json",
@@ -42,7 +42,7 @@ export const signout = (next) => {
         localStorage.removeItem("jwt")
         next();
     }
-    return fetch(`${process.env.REACT_APP_SERVER_URL}/signout`, {
+    return fetch(`/signout`, {
         method: 'POST'
     })
         .then(response => {
