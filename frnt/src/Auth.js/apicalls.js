@@ -1,6 +1,6 @@
 // import {REACT_APP_SERVER_URL} from '../../'
 export const signup = (Email,Name,Password) => {
-    console.log("user data ",user)
+    console.log("user data ",Email)
     console.log("",process.env.REACT_APP_SERVER_URL)
     return fetch(`${process.env.REACT_APP_SERVER_URL}/signup`, {
         method: 'POST',
